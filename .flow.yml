@@ -72,7 +72,7 @@ flows:
 
     trigger:
       push:
-        - master
+        - develop
       tag:
         - '*'
       pull_request: true
