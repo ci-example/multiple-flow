@@ -17,6 +17,7 @@ flows:
   # flow - 1
   - name: flow-1
     language: objc
+    version: Xcode8
     cache: false
     env:
       - FLOW_ENV_5=xxx555
@@ -42,6 +43,7 @@ flows:
   # flow - 2
   - name: flow-2
     language: android
+    version: jdk8
     cache: false
 
     trigger:
@@ -65,6 +67,7 @@ flows:
   # flow - 3
   - name: flow-3
     language: nodejs
+    version: v6.6.0
     cache: false
 
     trigger:
