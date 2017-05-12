@@ -16,8 +16,8 @@ flow_relation:
 flows:
   # flow - 1
   - name: flow-1
-    language: objc
-    version: Xcode8
+    language: ruby
+    version: 2.3.0
     cache: false
     env:
       - FLOW_ENV_5=xxx555
