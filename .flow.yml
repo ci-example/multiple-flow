@@ -32,8 +32,8 @@ flows:
     # steps definition, cannot define both plugin and scripts
     steps:
       - name: step_1
-    	scripts: | 
-   	echo "flow 1, step 1"
+        scripts:
+          - echo "flow 1, step 1"
 
       - name: step_2
         scripts:
@@ -41,27 +41,45 @@ flows:
 
   # flow - 2
   - name: flow-2
-    language: java
+    language: android
+    cache: false
+
     trigger:
       push:
         - master
+      tag:
+        - '*'
+      pull_request: true
 
     # steps definition, cannot define both plugin and scripts
     steps:
       - name: step_1
- 	scripts: |
-	echo "flow 2, step 1"
+        scripts:
+          - echo "flow 2, step 1"
+
+      - name: step_2
+        scripts:
+          - echo "flow 2, step 1"
+
 
   # flow - 3
   - name: flow-3
-    language: nodejs    
+    language: nodejs
+    cache: false
 
     trigger:
       push:
-        - develop
+        - master
+      tag:
+        - '*'
+      pull_request: true
 
     # steps definition, cannot define both plugin and scripts
     steps:
       - name: step_1
-	scripts: |
-	echo "flow 3, step 1"
+        scripts:
+          - echo "flow 3, step 1"
+
+      - name: step_2
+        scripts:
+          - echo "flow 3, step 1"
