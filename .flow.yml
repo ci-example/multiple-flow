@@ -7,11 +7,10 @@ env:
 # flow relation definition
 flow_relation:
  - sequence:
-   - parallel:
-     - flow-1
-     - flow-2
-   - flow-3
    - flow-1
+   - parallel:
+     - flow-2
+     - flow-3
 
 # flow level configuration
 flows:
