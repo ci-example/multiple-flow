@@ -31,11 +31,11 @@ flows:
 
     # steps definition, cannot define both plugin and scripts
     steps:
-      - name: step_1
+      - name: step_1_1
         scripts:
           - echo "flow 1, step 1"
 
-      - name: step_2
+      - name: step_1_2
         scripts:
           - echo "flow 1, step 2"
 
@@ -53,11 +53,11 @@ flows:
 
     # steps definition, cannot define both plugin and scripts
     steps:
-      - name: step_1
+      - name: step_2_1
         scripts:
           - echo "flow 2, step 1"
 
-      - name: step_2
+      - name: step_2_2
         scripts:
           - echo "flow 2, step 1"
 
@@ -76,10 +76,10 @@ flows:
 
     # steps definition, cannot define both plugin and scripts
     steps:
-      - name: step_1
+      - name: step_3_1
         scripts:
           - echo "flow 3, step 1"
 
-      - name: step_2
+      - name: step_3_2
         scripts:
           - echo "flow 3, step 1"
