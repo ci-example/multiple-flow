@@ -1,0 +1,67 @@
+# project level configuration
+env:
+ - FLOW_ENV_1=xxx111,FLOW_ENV_2=xxx111
+ - FLOW_ENV_3=xxx222
+ - FLOW_ENV_4=xxx333
+
+# flow relation definition
+flow_relation:
+ - sequence:
+   - parallel:
+     - flow-1
+     - flow-2
+   - flow-3
+
+# flow level configuration
+flows:
+  # flow - 1
+  - name: flow-1
+    language: objc
+    cache: false
+    env:
+      - FLOW_ENV_5=xxx555
+      - FLOW_ENV_6="git log --format='%s' -n 5"
+
+    trigger:
+      push:
+        - master
+      tag:
+        - '*'
+      pull_request: true
+
+    # steps definition, cannot define both plugin and scripts
+    steps:
+      - name: step_1
+    	scripts: | 
+   	echo "flow 1, step 1"
+
+      - name: step_2
+        scripts:
+          - echo "flow 1, step 2"
+
+  # flow - 2
+  - name: flow-2
+    language: java
+    trigger:
+      push:
+        - master
+
+    # steps definition, cannot define both plugin and scripts
+    steps:
+      - name: step_1
+ 	scripts: |
+	echo "flow 2, step 1"
+
+  # flow - 3
+  - name: flow-3
+    language: nodejs    
+
+    trigger:
+      push:
+        - develop
+
+    # steps definition, cannot define both plugin and scripts
+    steps:
+      - name: step_1
+	scripts: |
+	echo "flow 3, step 1"
